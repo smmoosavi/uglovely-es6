@@ -113,3 +113,34 @@ o = {size: 'small'}
 **cons**
 - unfamiliar (yet)
 - maybe a little performance
+
+## conditional array creation
+
+input:
+```js
+const holyday = true // or false
+const tasks = [
+    'wake up',
+    'lunch',
+    ...(holyday?[]:['work']),
+    'sleep',
+];
+```
+
+value:
+```js
+// active = true
+tasks = ['wake up', 'lunch', 'sleep']
+
+// active = false
+tasks = ['wake up', 'lunch', 'work', 'sleep']
+```
+
+
+**pros**
+- object creation is not flow of code
+- no mutation
+
+**cons**
+- unfamiliar (yet)
+- maybe a little performance
