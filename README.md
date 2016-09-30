@@ -64,6 +64,34 @@ var o = { color: color, size: size };
 - more code sometimes
 
 
+## pick
+
+input:
+```js
+// input is {size: 'large', color: 'red', text: 'es6'}
+const {size, color} = input;
+const output = {size, color};
+```
+
+output:
+```js
+// input is {size: 'large', color: 'red', text: 'es6'}
+var size = input.size;
+var color = input.color;
+var output = { size: size, color: color };
+```
+
+**need help:**
+is there any pure es6, one line, without name duplicated way?
+```js
+// lodash way
+_.pick(input, ['size', 'color']);
+```
+
+**cons**
+- duplicate name
+
+
 ## jsx props setter
 input:
 ```jsx
