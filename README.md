@@ -17,6 +17,31 @@ var color = this.props.color;
 - Avoid duplicate name
 - less code
 
+
+## object creation
+
+input:
+```js
+const color = 'red';
+const size = 'small';
+const o = {color, size};
+```
+
+output:
+```js
+var color = 'red';
+var size = 'small';
+var o = { color: color, size: size };
+```
+
+**pros**
+- Avoid duplicate name
+- less code sometimes
+
+**cons**
+- more code sometimes
+
+
 ## jsx props setter
 input:
 ```jsx
