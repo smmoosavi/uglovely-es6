@@ -1,6 +1,18 @@
 # uglovely-es6
 ugly-lovely es6 syntax
 
+basic:
+- [properties getter](#properties-getter)
+- [deep properties getter](#deep-properties-getter)
+- [object creation](#object-creation)
+- [pick](#pick)
+
+a tempo up:
+- [jsx props setter](#jsx-props-setter)
+- [conditional object creation](#conditional-object-creation)
+- [conditional array creation](#conditional-array-creation)
+
+
 ## properties getter
 
 input:
