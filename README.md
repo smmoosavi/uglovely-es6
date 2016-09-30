@@ -65,3 +65,51 @@ React.createElement(MyComponent, { color: color });
 - Avoid duplicate name
 - less code
 
+
+## conditional object creation
+
+input:
+```js
+const color = 'red';
+const size = 'small';
+const active = true; // or false
+
+const o = {
+    size,
+    ...(active?{color}:{}),
+}
+```
+
+equal logic:
+```js
+const color = 'red';
+const size = 'small';
+const active = true; // or false
+
+const o = {size};
+if (active) {
+    o.color = color;
+}
+```
+
+output:
+```js
+// ugly.
+```
+
+value:
+```js
+// active = true
+o = {size: 'small', color: 'red'}
+
+// active = false
+o = {size: 'small'}
+```
+
+**pros**
+- object creation is not flow of code
+- no mutation
+
+**cons**
+- unfamiliar (yet)
+- maybe a little performance
