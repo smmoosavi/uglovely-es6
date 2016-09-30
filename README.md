@@ -18,6 +18,28 @@ var color = this.props.color;
 - less code
 
 
+## deep properties getter
+
+input:
+```js
+// action is {type: 'add', payload: {value: 1}}
+
+const {type, payload: {value}} = action;
+```
+
+output:
+```js
+// action is { type: 'add', payload: { value: 1 } };
+
+var type = action.type;
+var value = action.payload.value;
+```
+
+**pros**
+- Avoid duplicate name
+- less code
+
+
 ## object creation
 
 input:
