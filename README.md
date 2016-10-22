@@ -191,10 +191,10 @@ const tasks = [
 
 value:
 ```js
-// active = true
+// holyday = true
 tasks = ['wake up', 'lunch', 'sleep']
 
-// active = false
+// holyday = false
 tasks = ['wake up', 'lunch', 'work', 'sleep']
 ```
 
