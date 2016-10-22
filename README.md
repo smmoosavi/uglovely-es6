@@ -113,13 +113,13 @@ const color = 'red';
 
 equal to:
 ```jsx
-const color = 1;
+const color = 'red';
 <MyComponent color={color}/>;
 ```
 
 output:
 ```js
-const color = 1;
+const color = 'red';
 React.createElement(MyComponent, { color: color });
 ```
 
@@ -191,10 +191,10 @@ const tasks = [
 
 value:
 ```js
-// active = true
+// holyday = true
 tasks = ['wake up', 'lunch', 'sleep']
 
-// active = false
+// holyday = false
 tasks = ['wake up', 'lunch', 'work', 'sleep']
 ```
 
