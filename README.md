@@ -113,13 +113,13 @@ const color = 'red';
 
 equal to:
 ```jsx
-const color = 1;
+const color = 'red';
 <MyComponent color={color}/>;
 ```
 
 output:
 ```js
-const color = 1;
+const color = 'red';
 React.createElement(MyComponent, { color: color });
 ```
 
