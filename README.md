@@ -6,6 +6,7 @@ basic:
 - [deep properties getter](#deep-properties-getter)
 - [object creation](#object-creation)
 - [pick](#pick)
+- [adapter](#adapter)
 
 a tempo up:
 - [jsx props setter](#jsx-props-setter)
