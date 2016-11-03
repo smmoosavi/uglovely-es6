@@ -103,6 +103,75 @@ _.pick(input, ['size', 'color']);
 **cons**
 - duplicate name
 
+## adapter
+input:
+```js
+universalClearMethod($type, $id) { // $type is 'row' or 'column'
+    const { axis, clear } = (({
+        row: () => {
+            return {
+                axis: $id % 9,
+                clear: (...args) => this.clearFromRow(...args)
+            };
+        },
+        column: () => {
+            return {
+                axis: Math.floor($id / 9),
+                clear: (...args) => this.clearFromColumn(...args)
+            };
+        }
+    })[$type])();
+    // code; for example:
+    clear(axis, $id);
+}
+```
+
+equal to:
+```js
+universalClearMethod($type, $id) { // $type is 'row' or 'column'
+    var clear, axis;
+    if ($type === 'row') {
+        axis = $id % 9;
+        clear = clearFromRow;
+    } else if ($type === 'column') {
+        axis = Math.floor($id / 9);
+        clear = clearFromColumn;
+    }
+    // code; for example:
+    clear(axis, $id);
+}
+```
+
+or
+
+```js
+universalClearMethod($type, $id) { // $type is 'row' or 'column'
+    var clear, axis;
+    switch (expr) {
+        case 'row':
+            axis = $id % 9;
+            clear = clearFromRow;
+            break;
+        case 'column':
+            axis = Math.floor($id / 9);
+            clear = clearFromColumn;
+            break;
+        default:
+            console.log('Error');
+    }
+    // code; for example:
+    clear(axis, $id);
+}
+```
+
+**pros**
+- no mutation
+- declarative
+
+**cons**
+- unfamiliar (yet)
+- maybe a little performance
+
 
 ## jsx props setter
 input:
